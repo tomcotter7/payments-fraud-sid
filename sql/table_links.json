@@ -1,0 +1,110 @@
+{
+  "_comment": "This json file orders each table in this data model, and displays which fields link to other tables",
+  "pacs002": {
+    "_meaning": "pacs002 msg",
+    "links": {
+      "CRD_TRF_TX_INST": ["OrgnlTxId"],
+      "AGENT": ["InstgAgt", "InstdAgt"],
+      "pacs008": ["OrgnlMsgId"]
+    }
+  },
+  "pacs008": {
+    "_meaning": "pacs008 msg",
+    "links": {
+      "CRD_TRF_TX_INST": ["CrdTrfTxInstId[N]"]
+    }
+  },
+  "camt056": {
+    "_meaning": "camt056 msg",
+    "links": {
+      "ANY MESSAGE": ["OrgnlMsgId"]
+    }
+  },
+  "CXL_RSN_INF": {
+    "_meaning": "Cancellation Reason Information",
+    "links": {
+      "camt056": ["MsgId"]
+    }
+  },
+  "TX_INF": {
+    "_meaning": "Transaction Information",
+    "links": {
+      "camt056": ["MsgId"],
+      "CRD_TRF_TX_INST": ["OrgnlTxId"]
+    }
+  },
+  "CRD_TRF_TX_INST": {
+    "_meaning": "Credit Transfer Transaction Instruction",
+    "links": {
+      "AGENT": ["InstgAgt", "IntrmyAgt", "InstdAgt", "DbtrAgt", "CrdrtAgt"],
+      "PARTY_INDIV": ["DbtrId", "UltmtDbtrId", "CrdtrId", "UltmtCrdtrId"],
+      "TAX": ["TaxId"],
+      "RGLRTYRPTG": ["RRId"],
+      "RMTINF": ["RmtInfId"]
+    }
+  },
+  "PYMT_INST": {
+    "_meaning": "Payment Instruction",
+    "links": {
+      "CRD_TRF_TX_INST": ["CrdTrfTxInstId[N]"],
+      "AGENT": ["DbtrAgt"],
+      "PARTY_INDIV": ["ChrgBr", "DbtrId"],
+      "pain001": ["MsgId"],
+      "pain013": ["MsgId"]
+    }
+  },
+  "AGENT": {
+    "_meaning": "Agent",
+    "links": {
+      "ADDRESS": ["AddressId"],
+      "FN_INST": ["FnInstId"],
+    }
+  },
+  "STS_RSN_INF": {
+    "_meaning": "Status Reason Information",
+    "links": {
+      "PARTY_INDIV": ["Orgtr"]
+    }
+  },
+  "CHRGS_INF": {
+    "_meaning": "Charges Information",
+    "links": {
+      "CRD_TRF_TX_INST": ["TxId"],
+      "pacs002": ["MsgId"],
+      "AGENT": ["Agt"]
+    }
+  },
+  "PARTY_INDIV": {
+    "_meaning": "Party Individual",
+    "links": {
+      "ADDRESS": ["AddressId"],
+      "FN_INST": ["FnInstId"],
+    }
+  },
+  "ACCOUNT": {
+    "_meaning": "Account",
+    "links": {
+      "PARTY_INDIV": ["PartyId"]
+    }
+  },
+  "FN_INST": {
+    "_meaning": "Financial Institution",
+    "links": {
+      "ADDRESS": ["AddressId"]
+    }
+  },
+  "TAX": {
+    "_meaning": "Tax",
+    "links": {}
+  },
+  "RGLRTY_RPTG": {
+    "_meaning": "Regulartory Reporting",
+    "links": {}
+  },
+  "RMT_INF": {
+    "_meaning": "Remittance Information",
+    "links": {
+      "ADDRESS": ["AddressId"]
+    }
+  }
+}

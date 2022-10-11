@@ -1,0 +1,13 @@
+{
+  "databaseConnections" : {
+    "snowflake" : {
+      "account" : "ywa25141.us-east-1",
+      "user": "python_con",
+      "database" : "LXA_PMNTS_DB",
+      "schema" : "PUBLIC",
+      "warehouse" : "COMPUTE_WH",
+      "role" : "RCREATEPUBLIC",
+      "password" : "asf@aui2!sdge2f"
+    }
+  }
+}
